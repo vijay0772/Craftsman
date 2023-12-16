@@ -1,0 +1,60 @@
+/* Add this CSS to your existing "style.css" or create a new one */
+
+.requests-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .request-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .request-item:hover {
+    transform: scale(1.02);
+  }
+  
+  .request-item.done {
+    border-left: 5px solid #28a745; /* Green border for done requests */
+  }
+  
+  .request-item.pending {
+    border-left: 5px solid #ffc107; /* Yellow border for pending requests */
+  }
+  
+  h2 {
+    color: #333;
+    text-align: center;
+  }
+  
+  h3 {
+    color: #007bff;
+  }
+  
+  p {
+    margin: 10px 0 0;
+    color: #555;
+  }
+  
+  Link {
+    display: block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  Link:hover {
+    text-decoration: underline;
+  }
+  

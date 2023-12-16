@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+      let map;
+      let marianosMarker;
+  
+      function initMap() {
+          const marianosLocation = { lat: 41.9445, lng: -87.6547 }; // Mariano's store in Chicago
+          map = new google.maps.Map(document.getElementById('map'), {
+              center: marianosLocation,
+              zoom: 15, // You can adjust the zoom level as needed
+          });
+  
+          // Add a marker for the Mariano's store
+          marianosMarker = new google.maps.Marker({
+              position: marianosLocation,
+              map: map,
+              title: "Mariano's - Chicago",
+          });
+  
+          // Add an event listener to open an info window when the marker is clicked
+          marianosMarker.addListener('click', function () {
+              const infowindow = new google.maps.InfoWindow({
+                  content: '<strong>Mariano\'s - Chicago</strong>',
+              });
+              infowindow.open(map, marianosMarker);
+          });
+      }
+  
+      // Initialize a geocoder
+      const geocoder = new google.maps.Geocoder();
+  
+      function geocodeAddress(address, callback) {
+          geocoder.geocode({ 'address': address }, function (results, status) {
+              if (status === 'OK' && results[0]) {
+                  const location = results[0].geometry.location;
+                  callback(location);
+              } else {
+                  alert('Geocode was not successful for the following reason: ' + status);
+              }
+          });
+      }
+  
+      // Function to change the map's center and zoom
+      function change(address) {
+          geocodeAddress(address, function (location) {
+              map.setCenter(location);
+              map.setZoom(15); // You can adjust the zoom level as needed
+              // Place the marker at the new location
+              marianosMarker.setPosition(location);
+          });
+      }
+  </script>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXNhSo8nI8vbgBSRDBTBuwxcNXc1gR8zw&callback=initMap&libraries=places,geometry"
+      async defer></script>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>CraftsMan Services</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

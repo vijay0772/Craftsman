@@ -1,0 +1,39 @@
+/* StoreMap.css */
+
+.store-map-container {
+    text-align: center;
+    padding-top: 100px;
+  }
+  
+  .store-map-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; /* Adjust color as needed */
+  }
+  
+  .store-map-search {
+    margin-bottom: 20px;
+  }
+  
+  .store-map-button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add smooth transition */
+  }
+  
+  .store-map-button:hover {
+    background-color: #45a049; /* Darker color on hover */
+  }
+  
+  .store-map {
+    height: 400px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  

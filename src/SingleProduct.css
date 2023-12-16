@@ -1,0 +1,79 @@
+/* style.css */
+
+/* Add styles for the product container */
+.prd-container {
+    margin: 20px;
+  }
+  
+  /* Style the product grid */
+  .single-prd-grid-container {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Style each product item */
+  .grid-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .grid-item h2 {
+    margin-bottom: 10px;
+  }
+  
+  .grid-item h3 {
+    color: #888;
+    margin-bottom: 10px;
+  }
+  
+  .grid-item h4 {
+    margin-bottom: 10px;
+  }
+  
+  /* Style the product image */
+  .grid-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the action buttons */
+  .btn-buy,
+  .btn-review,
+  .btn-danger,
+  .btn-update {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-buy:hover,
+  .btn-review:hover,
+  .btn-danger:hover,
+  .btn-update:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Notification styles */
+  .notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .notification {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
