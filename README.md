@@ -1,4 +1,4 @@
-Created HomeHub website for tool purchase, home maintenance scheduling, and reviews, featuring A
+Created HomeHub website for tool purchase, home maintenance scheduling, and reviews, featuring a
 location-based service finder.
 Established a three-tier user system (customer, employee, retailer) with retailer privileges, including
 customer and employee management, and a comprehensive inventory reporting system for streamlined
